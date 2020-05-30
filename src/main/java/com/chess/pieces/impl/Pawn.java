@@ -1,6 +1,7 @@
 package com.chess.pieces.impl;
 
 import com.chess.pieces.Piece;
+import com.chess.position.Position;
 
 import java.util.List;
 
@@ -10,11 +11,9 @@ public class Pawn extends Piece {
     super(name);
   }
 
-  public List<String> possibleMoves() {
+  @Override
+  public List<String> possibleMoves(final Position piecePosition) {
     return null;
   }
 
-  public boolean canMove(final int start, final int dest) {
-    return false;
-  }
 }
