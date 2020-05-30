@@ -10,8 +10,8 @@ import java.util.List;
 
 public class Horse extends Piece {
 
-  //private static final int rows[]    = {2, 1, -1, -2, -2, -1, 1, 2};
-  //private static final int columns[] = {1, 2, 2, 1, -1, -2, -2, -1};
+  private static final int rows[]    = {2, 1, -1, -2, -2, -1, 1, 2};
+  private static final int columns[] = {1, 2, 2, 1, -1, -2, -2, -1};
 
   public Horse(final String name) {
     super(name);
@@ -19,12 +19,10 @@ public class Horse extends Piece {
 
   @Override
   public List<String> possibleMoves(final Position source) {
-/*
-    List<String> possibleMoves = new ArrayList<>();
-
+    List<String> possibleMoves = new ArrayList<>(8);
     for (int i = 0; i < 8; i++) {
-      int row = source.getRow() + getRowValue(i);
-      int col = source.getCol() + getColValue(i);
+      int row = source.getRow() + rows[i];
+      int col = source.getCol() + columns[i];
       Position destination = new Position(row, col);
       if (validate(source, destination)) {
         String location = PositionMapper.getLocation(destination);
@@ -32,8 +30,5 @@ public class Horse extends Piece {
       }
     }
     return possibleMoves;
-
- */
-    return null;
   }
 }
