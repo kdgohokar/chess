@@ -12,11 +12,6 @@ public class Position {
     this.col = col;
   }
 
-  public Position(final String position) {
-    this.row = PositionMapper.getRow(position);
-    this.col = PositionMapper.getCol(position);
-  }
-
   public Integer getRow() {
     return row;
   }
@@ -28,7 +23,6 @@ public class Position {
   public boolean validate() {
     return this.row >= 0 && this.col >= 0 && this.row < 8 && this.col < 8;
   }
-
 
   @Override
   public boolean equals(final Object o) {
