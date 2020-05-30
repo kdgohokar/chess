@@ -2,6 +2,8 @@ package com.chess.processor;
 
 import com.chess.command.Command;
 import com.chess.pieces.Piece;
+import com.chess.rules.IRule;
+import com.chess.rules.RuleEngine;
 
 import java.util.List;
 import java.util.Scanner;
@@ -18,10 +20,10 @@ public class ChessProcessor {
       String pieceStr = scanner.next();
       String positionStr = scanner.next();
       Command cmd = new Command(pieceStr, positionStr);
-      Piece piece = cmd.getPiece();
-      List<String> possibleMovesList = piece.possibleMoves(cmd.getPosition());
-      System.out.println(possibleMovesList);
-      System.out.println("Press 'Q' to quit. Press any other key to play again.");
+      IRule rule = RuleEngine.getRule(cmd.getPiece());
+      final List<String> strings = rule.possibleMoves(cmd.getPiece(), cmd.getPosition());
+      System.out.println(strings);
+      System.out.println("Enter 'Q' to quit. 'Y' to continue.");
     } while (playAgain());
 
     scanner.close();

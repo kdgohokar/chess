@@ -33,7 +33,7 @@ public class PositionMapper {
     return Optional.ofNullable(location).map(positionMap::get).map(Position::getCol).orElse(null);
   }
 
-  public static String getLocation(Position position) {
+  public static String getLocation(final Position position) {
     return positionMap
         .entrySet()
         .stream()

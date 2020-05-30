@@ -1,4 +1,4 @@
-package com.chess.pieces.impl;
+package com.chess.rules;
 
 import com.chess.pieces.Piece;
 import com.chess.position.Position;
@@ -8,32 +8,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Horse extends Piece {
+public interface IRule {
 
-  //private static final int rows[]    = {2, 1, -1, -2, -2, -1, 1, 2};
-  //private static final int columns[] = {1, 2, 2, 1, -1, -2, -2, -1};
-
-  public Horse(final String name) {
-    super(name);
-  }
-
-  @Override
-  public List<String> possibleMoves(final Position source) {
-/*
+  default List<String> possibleMoves(final Piece piece, final Position source) {
+    IRule rule = RuleEngine.getRule(piece);
     List<String> possibleMoves = new ArrayList<>();
-
     for (int i = 0; i < 8; i++) {
       int row = source.getRow() + getRowValue(i);
       int col = source.getCol() + getColValue(i);
       Position destination = new Position(row, col);
-      if (validate(source, destination)) {
+      if (piece.validate(source, destination)) {
         String location = PositionMapper.getLocation(destination);
         possibleMoves.add(location);
       }
     }
     return possibleMoves;
-
- */
-    return null;
   }
+
+  int getRowValue(final int index);
+
+  int getColValue(final int index);
 }
