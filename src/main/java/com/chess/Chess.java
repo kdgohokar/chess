@@ -15,6 +15,7 @@ public class Chess {
         String piece = sc.next();
         String position = sc.next();
         Command cmd = new Command(piece, position);
+        System.out.println(cmd.toString());
         System.out.println("Press 'Q' to quit. Press any other key to play again.");
       } while (playAgain(sc));
     } catch (Exception e) {
