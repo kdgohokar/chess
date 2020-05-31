@@ -1,8 +1,8 @@
 package com.chess.processor;
 
 import com.chess.command.Command;
-import com.chess.rule.RuleEngine;
 
+import java.util.List;
 import java.util.Scanner;
 
 import static com.chess.util.Constants.QUIT_KEY;
@@ -24,8 +24,8 @@ public class ChessProcessor {
       String pieceStr = scanner.next();
       String positionStr = scanner.next();
       Command cmd = new Command(pieceStr, positionStr);
-      RuleEngine ruleEngine = new RuleEngine(cmd);
-      System.out.println(ruleEngine.getPossibleMoves());
+      final List<String> possibleMoves = cmd.getPiece().getPossibleMoves(cmd.getPosition());
+      System.out.println(possibleMoves);
     } catch (Exception e) {
       System.err.println(e.getMessage());
     } finally {
