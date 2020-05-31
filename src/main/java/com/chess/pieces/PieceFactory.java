@@ -16,6 +16,10 @@ public class PieceFactory {
 
   public static Piece getPiece(final String piece) {
     PieceEnum pieceEnum = PieceEnum.permissiveValueOf(piece);
+    return getPiece(pieceEnum);
+  }
+
+  public static Piece getPiece(final PieceEnum pieceEnum) {
     switch (pieceEnum) {
       case KING:
         return new King(pieceEnum.getName());
@@ -30,7 +34,7 @@ public class PieceFactory {
       case PAWN:
         return new Pawn(pieceEnum.getName());
       default:
-        throw new IllegalArgumentException(piece + " does not exists");
+        throw new IllegalArgumentException("Piece does not exists");
     }
   }
 
