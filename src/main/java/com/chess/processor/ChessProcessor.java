@@ -29,7 +29,7 @@ public class ChessProcessor {
     } catch (Exception e) {
       System.err.println(e.getMessage());
     } finally {
-      System.out.println("Enter 'Q' to quit. 'Y' to continue.");
+      System.out.println("Enter '" + QUIT_KEY + "' to quit. 'Y' to continue.");
     }
   }
 

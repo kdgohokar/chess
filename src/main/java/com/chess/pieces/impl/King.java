@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.chess.util.Constants.MAX_SIZE;
+
 public class King extends Piece {
 
   private static final List<Integer> rows    = Arrays.asList(0, 1, 1, 1, 0, -1, -1, -1);
@@ -19,8 +21,8 @@ public class King extends Piece {
 
   @Override
   public List<String> getPossibleMoves(final Position position) {
-    List<String> possibleMoves = new ArrayList<>(8);
-    for (int i = 0; i < 8; i++) {
+    List<String> possibleMoves = new ArrayList<>(MAX_SIZE);
+    for (int i = 0; i < MAX_SIZE; i++) {
       int row = position.getRow() + rows.get(i);
       int col = position.getCol() + columns.get(i);
       Position destination = new Position(row, col);

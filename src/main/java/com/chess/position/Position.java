@@ -2,6 +2,9 @@ package com.chess.position;
 
 import java.util.Objects;
 
+import static com.chess.util.Constants.MAX_SIZE;
+import static com.chess.util.Constants.MIN_SIZE;
+
 public class Position {
 
   private Integer row;
@@ -21,7 +24,7 @@ public class Position {
   }
 
   public boolean validate() {
-    return this.row >= 0 && this.col >= 0 && this.row < 8 && this.col < 8;
+    return this.row >= MIN_SIZE && this.col >= MIN_SIZE && this.row < MAX_SIZE && this.col < MAX_SIZE;
   }
 
   @Override

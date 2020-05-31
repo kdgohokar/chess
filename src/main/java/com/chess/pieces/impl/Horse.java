@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.chess.util.Constants.MAX_SIZE;
 
 public class Horse extends Piece {
 
@@ -21,7 +22,7 @@ public class Horse extends Piece {
   @Override
   public List<String> getPossibleMoves(final Position position) {
     List<String> possibleMoves = new ArrayList<>(8);
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < MAX_SIZE; i++) {
       int row = position.getRow() + rows.get(i);
       int col = position.getCol() + column.get(i);
       Position destination = new Position(row, col);

@@ -25,7 +25,7 @@ public enum PieceEnum {
         .of(values())
         .filter(p -> p.name.equalsIgnoreCase(name))
         .findFirst()
-        .orElseThrow(() -> new RuntimeException(name + " does not exists."));
+        .orElseThrow(() -> new IllegalArgumentException(name + " does not exists."));
   }
 
 }
