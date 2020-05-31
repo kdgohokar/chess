@@ -1,9 +1,13 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group 'com.chess'
 version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -18,3 +22,16 @@ jar {
         attributes 'Main-Class': 'com.chess.Chess'
     }
 }
+
+test {
+    useJUnit()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport

@@ -1,3 +1,5 @@
+![Build Status](https://github.com/kdgohokar/chess/workflows/Build%20Status/badge.svg)
+[![codecov](https://codecov.io/gh/kdgohokar/chess/branch/master/graph/badge.svg)](https://codecov.io/gh/kdgohokar/chess)
 # chess
 A simple console based chess board game. The program will detect the possible moves of a piece.
 
